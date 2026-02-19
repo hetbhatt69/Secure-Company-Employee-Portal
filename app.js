@@ -22,13 +22,24 @@ async function login() {
 
     try{
 
-        const res = await fetch(API + "login.php", {
-            method:"POST",
-            headers:{ "Content-Type":"application/json" },
-            body: JSON.stringify({ email, password })
-        });
+       const res = await fetch(API + "login.php", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        email: email,
+        password: password
+    })
+});
 
-        const data = await res.json();
+if (!res.ok) {
+    msg.innerText = "Server not responding";
+    return;
+}
+
+const data = await res.json();
+
 
         /* Failed login counter */
         if(!localStorage.failedAttempts){
