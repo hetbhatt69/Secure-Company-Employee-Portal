@@ -1,22 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Login</title>
+<meta charset="UTF-8">
+<title>Employee Portal Login</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:linear-gradient(135deg,#0f172a,#020617);
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.login-box{
+    background:#1e293b;
+    padding:40px;
+    border-radius:12px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(0,0,0,.5);
+    animation:fadeIn .7s ease;
+}
+
+.login-box h2{
+    color:white;
+    margin-bottom:25px;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+    outline:none;
+}
+
+.login-box button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#22c55e;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-box button:hover{
+    background:#16a34a;
+}
+
+#msg{
+    margin-top:10px;
+    font-size:14px;
+    color:#f87171;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px)}
+    to{opacity:1; transform:translateY(0)}
+}
+</style>
+
 </head>
 <body>
 
-<div class="box">
-<h2>Employee Portal</h2>
+<div class="login-box">
 
-<input id="email" placeholder="Email">
-<input id="pass" type="password" placeholder="Password">
+    <h2>Employee Portal</h2>
 
-<button onclick="login()">Login</button>
+    <!-- EMAIL -->
+    <input 
+        type="email"
+        id="email"
+        placeholder="Enter Email"
+        required
+    >
 
-<p id="msg"></p>
+    <!-- PASSWORD -->
+    <input 
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+        required
+    >
+
+    <!-- MESSAGE -->
+    <p id="msg"></p>
+
+    <!-- LOGIN BUTTON -->
+    <button onclick="login()">Login</button>
+
 </div>
 
+
+<!-- IMPORTANT → must be here -->
 <script src="app.js"></script>
+
 </body>
 </html>
