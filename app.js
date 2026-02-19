@@ -3,7 +3,7 @@
 ================================ */
 
 
-const API = "https://employee-backend-qvmq.onrender.com/";
+const API = "https://employee-backend-qvmq.onrender.com";
 
 
 /* ===============================
